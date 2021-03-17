@@ -1,27 +1,75 @@
 <template>
   <v-card
-    class="mx-auto"
+    class="mx-0 my-2"
+    min-width="310"
+    color="#003756"
+    outlined
     :class="{
-      locked: isLocked,
       dropzone: isDragging,
       selected: isSelected,
-      highlighted: isHighlighted
+      highlighted: isHighlighted,
     }"
     raised
     v-on="$listeners"
     @drop.native.prevent.stop="onDrop($event)"
-    @dragover.prevent.stop="isDropZone($event, true)"
-    @dragenter.prevent.stop="isDropZone($event, true)"
-    @dragleave="isDropZone($event, false)"
+    @dragover.prevent.stop="isDragging = true"
+    @dragenter.prevent.stop="isDragging = true"
+    @dragleave="isDragging = false"
     @click="selectIndividual"
   >
-    <v-list-item class="grow" three-line>
-      <avatar :name="name" :email="email" :size="30" />
+    <v-list-item three-line>
+      <v-list-item-content>
+        <v-list-item-title class="headline mb-1">
+          {{ name || email }}
+        </v-list-item-title>
+
+        <v-list-item-subtitle v-if="enrollments && enrollments.length > 0">
+          {{ enrollments[0].organization.name }}
+        </v-list-item-subtitle>
+
+        <v-list-item-icon>
+          <v-menu offset-y offset-x :close-on-content-click="false">
+            <template v-slot:activator="{ on }">
+              <v-btn icon v-on="on" @mousedown.stop>
+                <v-icon small color="white"> mdi-magnify-plus-outline </v-icon>
+              </v-btn>
+            </template>
+            <expanded-individual
+              compact
+              :enrollments="enrollments"
+              :identities="identities"
+              :uuid="uuid"
+            />
+          </v-menu>
+          <v-tooltip
+            v-for="source in sources"
+            :key="source.name"
+            bottom
+            transition="expand-y-transition"
+            open-delay="300"
+          >
+            <template v-slot:activator="{ on }">
+              <v-icon v-on="on" v-text="source.icon" color="white" small left />
+            </template>
+            <span>{{ source.name }}</span>
+          </v-tooltip>
+          <v-btn text icon @click.stop="$emit('remove')" @mousedown.stop>
+            <v-icon small color="red"> mdi-close </v-icon>
+          </v-btn>
+        </v-list-item-icon>
+      </v-list-item-content>
+
+      <v-list-item-avatar tile size="63"
+        ><avatar :name="name" :email="email" :size="43"
+      /></v-list-item-avatar>
+    </v-list-item>
+
+    <!-- <v-list-item class="grow" three-line>
+      <avatar :name="name" :email="email" :size="50" />
 
       <v-list-item-content>
         <v-list-item-title class="font-weight-medium">
           {{ name || email }}
-          <v-icon v-if="isLocked" small right class="mb-1">mdi-lock</v-icon>
         </v-list-item-title>
         <v-list-item-subtitle v-if="enrollments && enrollments.length > 0">
           {{ enrollments[0].organization.name }}
@@ -64,7 +112,7 @@
           </v-icon>
         </v-btn>
       </v-list-item-icon>
-    </v-list-item>
+    </v-list-item> -->
     <slot />
   </v-card>
 </template>
@@ -77,54 +125,50 @@ export default {
   name: "individualcard",
   components: {
     Avatar,
-    ExpandedIndividual
+    ExpandedIndividual,
   },
   props: {
     name: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     email: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     sources: {
       type: Array,
       required: false,
-      default: () => []
+      default: () => [],
     },
     isSelected: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     uuid: {
       type: String,
-      required: true
+      required: true,
     },
     identities: {
       type: Array,
-      required: false
+      required: false,
     },
     enrollments: {
       type: Array,
-      required: false
+      required: false,
     },
     isHighlighted: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
-    isLocked: {
-      type: Boolean,
-      required: true
-    }
   },
   data() {
     return {
-      isDragging: false
+      isDragging: false,
     };
   },
   methods: {
@@ -138,10 +182,6 @@ export default {
       }
     },
     onDrop(event) {
-      this.isDragging = false;
-      if (this.isLocked) {
-        return;
-      }
       const type = event.dataTransfer.getData("type");
       if (type === "move") {
         this.moveIndividual(event);
@@ -150,6 +190,7 @@ export default {
       } else {
         this.mergeIndividuals(event);
       }
+      this.isDragging = false;
     },
     selectIndividual() {
       this.$emit("select");
@@ -162,27 +203,14 @@ export default {
       const droppedIndividuals = JSON.parse(
         event.dataTransfer.getData("individuals")
       );
-      const uuids = droppedIndividuals
-        .filter(individual => !individual.isLocked)
-        .map(individual => individual.uuid);
-      if (uuids.length > 0) {
-        this.$emit("merge", [this.uuid, ...uuids]);
-      }
+      const uuids = droppedIndividuals.map((individual) => individual.uuid);
+      this.$emit("merge", [this.uuid, ...uuids]);
     },
     enrollIndividual(event) {
       const organization = event.dataTransfer.getData("organization");
       this.$emit("enroll", organization);
     },
-    isDropZone(event, isDragging) {
-      const types = event.dataTransfer.types;
-
-      if (isDragging && !types.includes("lockactions")) {
-        this.isDragging = true;
-      } else {
-        this.isDragging = false;
-      }
-    }
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -190,5 +218,19 @@ export default {
 
 .v-list-item--three-line .v-list-item__avatar {
   font-size: 0.8rem;
+}
+
+.v-list-item__icon {
+  margin-bottom: 0px;
+  margin-top: 12px;
+  margin-left: -10px !important;
+}
+
+.v-list-item__title {
+  color: white;
+}
+
+.v-list-item__subtitle {
+  color: white !important;
 }
 </style>

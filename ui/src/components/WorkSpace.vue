@@ -10,9 +10,7 @@
   >
     <v-row class="ma-md-0 pt-md-4 pl-md-4 pr-md-4 justify-space-between">
       <h3 class="title">
-        <v-icon color="black" left>
-          mdi-pin
-        </v-icon>
+        <v-icon color="black" left> mdi-pin </v-icon>
         Workspace
       </h3>
       <div>
@@ -90,9 +88,7 @@
         <v-card-text>{{ dialog.text }}</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn text @click="dialog.open = false">
-            Cancel
-          </v-btn>
+          <v-btn text @click="dialog.open = false"> Cancel </v-btn>
           <v-btn color="blue darken-4" text @click.stop="dialog.action">
             Confirm
           </v-btn>
@@ -106,37 +102,37 @@
 import {
   mergeIndividuals,
   moveIdentity,
-  formatIndividuals
+  formatIndividuals,
 } from "../utils/actions";
 import { enrollMixin } from "../mixins/enroll";
 import IndividualCard from "./IndividualCard.vue";
 export default {
   name: "WorkSpace",
   components: {
-    IndividualCard
+    IndividualCard,
   },
   mixins: [enrollMixin],
   props: {
     highlightIndividual: {
       type: String,
-      required: false
+      required: false,
     },
     individuals: {
       type: Array,
-      required: true
+      required: true,
     },
     mergeItems: {
       type: Function,
-      required: true
+      required: true,
     },
     moveItem: {
       type: Function,
-      required: true
+      required: true,
     },
     enroll: {
       type: Function,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
@@ -146,24 +142,26 @@ export default {
         open: false,
         title: "",
         text: "",
-        action: ""
+        action: "",
       },
       snackbar: {
         open: false,
-        text: ""
-      }
+        text: "",
+      },
     };
   },
   computed: {
     selectedIndividuals() {
-      return this.savedIndividuals.filter(individual => individual.isSelected);
+      return this.savedIndividuals.filter(
+        (individual) => individual.isSelected
+      );
     },
     isDisabled() {
       return (
-        this.selectedIndividuals.filter(individual => !individual.isLocked)
+        this.selectedIndividuals.filter((individual) => !individual.isLocked)
           .length < 2
       );
-    }
+    },
   },
   methods: {
     clearSpace() {
@@ -180,12 +178,12 @@ export default {
       );
       const newIndividuals = droppedIndividuals
         .filter(
-          dropped =>
+          (dropped) =>
             !this.savedIndividuals.some(
-              individual => individual.id === dropped.id
+              (individual) => individual.id === dropped.id
             )
         )
-        .map(individual => Object.assign(individual, { isSelected: false }));
+        .map((individual) => Object.assign(individual, { isSelected: false }));
       this.savedIndividuals.push(...newIndividuals);
       this.isDragging = false;
       this.$emit("deselect");
@@ -202,17 +200,17 @@ export default {
       this.dialog.open = false;
     },
     mergeSelected(individuals) {
-      individuals = individuals.filter(individual => !individual.isLocked);
+      individuals = individuals.filter((individual) => !individual.isLocked);
       mergeIndividuals(individuals, this.merge, this.dialog);
     },
     updateMergedIndividuals(updated, mergedIndividuals) {
       const updatedIndividual = formatIndividuals([updated.individual])[0];
       const updatedIndex = this.savedIndividuals.findIndex(
-        individual => individual.id === updatedIndividual.id
+        (individual) => individual.id === updatedIndividual.id
       );
       Object.assign(this.savedIndividuals[updatedIndex], updatedIndividual);
       const individuals = this.savedIndividuals.filter(
-        individual => !mergedIndividuals.includes(individual.uuid)
+        (individual) => !mergedIndividuals.includes(individual.uuid)
       );
       return individuals;
     },
@@ -221,7 +219,7 @@ export default {
     },
     removeIndividual(individual) {
       this.savedIndividuals = this.savedIndividuals.filter(
-        savedIndividual => savedIndividual.uuid !== individual.uuid
+        (savedIndividual) => savedIndividual.uuid !== individual.uuid
       );
       this.$emit("updateWorkspace", { remove: [individual.uuid] });
       this.$emit("stopHighlight", individual);
@@ -243,7 +241,7 @@ export default {
       } catch (error) {
         Object.assign(this.snackbar, {
           open: true,
-          text: error
+          text: error,
         });
       }
     },
@@ -258,7 +256,7 @@ export default {
         return;
       }
       this.isDragging = true;
-    }
+    },
   },
   watch: {
     individuals(value) {
@@ -268,8 +266,8 @@ export default {
       if (value) {
         this.$emit("updateStore", value);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -280,6 +278,6 @@ export default {
   outline: 2px dashed #003756;
 }
 .col-2 {
-  min-width: 300px;
+  min-width: 340px;
 }
 </style>
