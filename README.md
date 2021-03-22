@@ -1,8 +1,7 @@
 # Sorting Hat
 
 **Warning**: This is the developing branch of the new version of Sorting Hat. We're moving Sorting Hat into a service.
-The documentation below would be totally incorrect or inaccurate. 
-
+The documentation below would be totally incorrect or inaccurate. Test
 
 ## Description
 
@@ -209,12 +208,15 @@ The next steps will restore the database generating new UUIDs for each identity
 but keeping the data and relationships between them.
 
 1. Export data
+
 ```
 $ sortinghat export --orgs orgs.json
 $ sortinghat export --identities identities.json
 ```
+
 1. Remove the database and/or create a new one with `sortinghat init`
 1. Load data, this will regenerate the UUIDs
+
 ```
 $ sortinghat load orgs.json
 $ sortinghat load identities.json
@@ -222,7 +224,8 @@ $ sortinghat load identities.json
 
 ## Basic commands
 
-* Add some unique identities
+- Add some unique identities
+
 ```
   $ sortinghat add --name "John Smith" --email "jsmith@example.com" --username "jsmith" --source scm
   New identity a9b403e150dd4af8953a52a4bb841051e4b705d9 to a9b403e150dd4af8953a52a4bb841051e4b705d9
@@ -231,7 +234,8 @@ $ sortinghat load identities.json
   New identity 3de180633322e853861f9ee5f50a87e007b51058 added to 3de180633322e853861f9ee5f50a87e007b51058
 ```
 
-* Set a profile
+- Set a profile
+
 ```
   $ sortinghat profile --name "John Smith" --email "jsmith@example.com" --country US a9b403e150dd4af8953a52a4bb841051e4b705d9
   unique identity a9b403e150dd4af8953a52a4bb841051e4b705d9
@@ -243,31 +247,36 @@ $ sortinghat load identities.json
       * Country: US - United States of America
 ```
 
-* Add an identity to an existing unique identity
+- Add an identity to an existing unique identity
+
 ```
   $ sortinghat add --username "jsmith" --source mls --uuid a9b403e150dd4af8953a52a4bb841051e4b705d9
   New identity 2612aad107cae121b45c1f46041650abc8e39421 added to a9b403e150dd4af8953a52a4bb841051e4b705d9
 ```
 
-* Merge two identities
+- Merge two identities
+
 ```
   $ sortinghat merge a7637bb1737bc2a83f3a3e25b9b441cba62d97c2 a9b403e150dd4af8953a52a4bb841051e4b705d9
   Unique identity 3de180633322e853861f9ee5f50a87e007b51058 merged on a9b403e150dd4af8953a52a4bb841051e4b705d9
 ```
 
-* Move an identity into a unique identity
+- Move an identity into a unique identity
+
 ```
   $ sortinghat mv 3de180633322e853861f9ee5f50a87e007b51058 3de180633322e853861f9ee5f50a87e007b51058
   New unique identity 3de180633322e853861f9ee5f50a87e007b51058 created. Identity moved
 ```
 
-* Remove a unique identity
+- Remove a unique identity
+
 ```
   $ sortinghat rm 3de180633322e853861f9ee5f50a87e007b51058
   Unique identity 3de180633322e853861f9ee5f50a87e007b51058 removed
 ```
 
-* Show identities information
+- Show identities information
+
 ```
   $ sortinghat show
   unique identity a9b403e150dd4af8953a52a4bb841051e4b705d9
@@ -285,21 +294,24 @@ $ sortinghat load identities.json
   No enrollments
 ```
 
-* Add some organizations
+- Add some organizations
+
 ```
   $ sortinghat orgs -a Example
   $ sortinghat orgs -a Bitergia
   $ sortinghat orgs -a Individual
 ```
 
-* Add some domains to the organizations
+- Add some domains to the organizations
+
 ```
   $ sortinghat orgs -a Example example.com --top-domain
   $ sortinghat orgs -a Example web.example.com
   $ sortinghat orgs -a Bitergia bitergia.com --top-domain
 ```
 
-* List organizations
+- List organizations
+
 ```
   $ sortinghat orgs
   Bitergia	bitergia.com *
@@ -308,23 +320,27 @@ $ sortinghat load identities.json
   Individual
 ```
 
-* Remove domains
+- Remove domains
+
 ```
   $ sortinghat orgs -d Example web.example.com
 ```
 
-* Remove organizations
+- Remove organizations
+
 ```
  $ sortinghat orgs -d Bitergia
 ```
 
-* Enroll
+- Enroll
+
 ```
   $ sortinghat enroll --from 2014-06-01 --to 2015-09-01 a9b403e150dd4af8953a52a4bb841051e4b705d9 Example
   $ sortinghat enroll --from 2015-09-01 a9b403e150dd4af8953a52a4bb841051e4b705d9 Individual
 ```
 
-* Show enrollments information
+- Show enrollments information
+
 ```
   $ sortinghat show a9b403e150dd4af8953a52a4bb841051e4b705d9
   unique identity a9b403e150dd4af8953a52a4bb841051e4b705d9
@@ -344,14 +360,16 @@ $ sortinghat load identities.json
     Individual	2015-09-01 00:00:00	2100-01-01 00:00:00
 ```
 
-* Withdraw
+- Withdraw
+
 ```
   $ sortinghat withdraw --from 2014-06-01 --to 2015-09-01 a9b403e150dd4af8953a52a4bb841051e4b705d9 Example
 ```
 
 ## Import / Export
 
-* Import data from a Sorting Hat JSON file
+- Import data from a Sorting Hat JSON file
+
 ```
   $ sortinghat load sh.json
   Loading blacklist...
@@ -365,34 +383,36 @@ $ sortinghat load identities.json
   100/100 unique identities loaded
 ```
 
-* Export identities
+- Export identities
+
 ```
   $ sortinghat export --identities sh_ids.json
 ```
 
-* Export organizations
+- Export organizations
+
 ```
   $ sortinghat export --orgs sh_orgs.json
 ```
 
 ## Requirements
 
-* Python >= 3.4
-* MySQL >= 5.6 or MariaDB 10.0
-* SQLAlchemy >= 1.2
-* Jinja2 >= 2.7
-* python-dateutil >= 2.6
-* python-yaml >= 3.12
-* requests >= 2.9
-* urllib3 >= 1.22
+- Python >= 3.4
+- MySQL >= 5.6 or MariaDB 10.0
+- SQLAlchemy >= 1.2
+- Jinja2 >= 2.7
+- python-dateutil >= 2.6
+- python-yaml >= 3.12
+- requests >= 2.9
+- urllib3 >= 1.22
 
 You will also need a MySQL Python driver to connect with the database server. We recommend to use one these packages:
 
-* PyMySQL
+- PyMySQL
 
 Optionally, you can install Pandas library to speed up the matching process:
 
-* python-pandas >= 0.15
+- python-pandas >= 0.15
 
 ## Running tests
 
@@ -400,15 +420,15 @@ SortingHat comes with a comprehensive list of unit tests.
 To run them, copy the file 'tests/tests.conf.sample' to 'tests/tests.conf'
 and edit it to suit your configuration:
 
-* `name`: Name of the database to use for testing
-* `host`, `port`: How to access the database server (MySQL, MariaDB)
-* `user`, `password`: Credentials for the database server
-* `create`: Whether the database for testing will be created (`True`)
+- `name`: Name of the database to use for testing
+- `host`, `port`: How to access the database server (MySQL, MariaDB)
+- `user`, `password`: Credentials for the database server
+- `create`: Whether the database for testing will be created (`True`)
   or not (`False`, by default). If `True`, tests will fail if database
   already exists. If `False`, tests will fail if database does not exist.
 
 You can run the tests through `setup.py` (no need to install dependencies
-  or something else, `setup.py` will take care of that):
+or something else, `setup.py` will take care of that):
 
 ```
 $ python3 setup.py test
@@ -420,12 +440,14 @@ Once SortingHat has been installed, some errors may pop up when running the test
 database configuration.
 
 MySQL command should be executed without superuser privilege (sudo):
+
 ```
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
 mysql> FLUSH PRIVILEGES;
 ```
 
 MySQL strict mode should be disabled:
+
 ```
 mysql> SET @@global.sql_mode= '';
 ```
