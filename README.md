@@ -1,7 +1,7 @@
 # Sorting Hat
 
 **Warning**: This is the developing branch of the new version of Sorting Hat. We're moving Sorting Hat into a service.
-The documentation below would be totally incorrect or inaccurate. Test
+The documentation below would be totally incorrect or inaccurate. Test Test
 
 ## Description
 
