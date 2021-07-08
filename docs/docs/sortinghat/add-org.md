@@ -18,6 +18,10 @@ In order to add an organisation in SortingHat, see the <code>Organisations</code
 2. Fill in the name of the organisation (Bitergia) and the domain or domains (www.bitergia.com).
 3. Save and it should be done !
 
+<img src="../../../assets/sortinghat/add-org.png">
+
 ## How to edit organisations
 
-Organisation data consists of a name and domains. However only the domains are editable. You can either remove the exisiting domain or add new domains. In both cases, the process is pretty easy. Click on the edit icon, &nbsp; <img src="../../../assets/sortinghat-edit.png" alt="sortinghat-edit" style="width:25px;"/> &nbsp;, to open up the Edit dialogue and press "Save" once done
+Organisation data consists of a name and domains. However only the domains are editable. You can either remove the exisiting domain or add new domains. In both cases, the process is pretty easy. Click on the edit icon to open up the Edit dialogue and press "Save" once done
+
+<img src="../../../assets/sortinghat/edit-org.png" alt="edit-org">
