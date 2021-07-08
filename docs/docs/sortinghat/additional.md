@@ -50,7 +50,15 @@ grand_parent: SortingHat
 
 - <strong>Set profile as Bot</strong><br>
   As we know, some identities can turned out to be bots. In order to remedy that, SortingHat provides the ability to mark profiles as Bot. The latter can be done either when creating a profile or after creating a profile.<br>
+
   - When creating a profile, you'll have the option to mark a profile as Bot. Simply check that option and Save.<br><br>
     <img src="../../../assets/sortinghat/setBot.png" alt="setBot"><br><br>
   - After creating a profile, hover right next to the profile's name and a set of icons will appear. Click on the bot icon to mark it as bot.<br><br>
-    <img src="../../../assets/sortinghat/setBot2.png" alt="setBot2">
+    <img src="../../../assets/sortinghat/setBot2.png" alt="setBot2"><br><br>
+
+- <strong>Order profiles</strong>
+  SortingHat provides the ability to display the list of profiles in ascending or descending order based on three filters (Last Updated, Created data and Name)<br><br>
+  <img src="../../../assets/sortinghat/order-profiles.png" alt="order-profiles">
+
+- <strong>Un-enroll an indivudual from an organisation</strong><br>
+  Simply go to the person's profile and in the `Organisations` section, click on Bin icon to remove that particular org from someone's profile. In the case, all of the affiliation need to be removed, click on the "Remove all" button in the Organisations section.
