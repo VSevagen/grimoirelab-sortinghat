@@ -11,9 +11,10 @@ grand_parent: SortingHat
 - <strong>Easy profile filtering</strong><br>
   Looking for a particular profile ? SortingHat provides several filters which can be used to filter through the lists of individuals to find the required one. You can filter the profiles according to the following filters.<br>
 
-  - <code style="background-color: #FBE5E1; color: #C0341D; padding: 0 0.4rem; font-size:15px;">country</code> <br> Filter using either country name or country code . For example `country: "United States of America` and `country: USA` return the same result.<br>
   - <code style="background-color: #FBE5E1; color: #C0341D; padding: 0 0.4rem; font-size:15px;">isBot</code> <br> Filter profiles marked as bots. For example `isBot: true` will return all profiles marked as bot and vice versa.<br>
+    <img src="../../../assets/sortinghat/is-bot.png" alt="is bot"><br>
   - <code style="background-color: #FBE5E1; color: #C0341D; padding: 0 0.4rem; font-size:15px;">isLocked</code> <br> Filter profiles marked as locked. For example `isLocked: true` will return all profiles marked as locked and vice versa<br>
+  - <code style="background-color: #FBE5E1; color: #C0341D; padding: 0 0.4rem; font-size:15px;">country</code> <br> Filter using either country name or country code . For example `country: "United States of America` and `country: USA` return the same result.<br>
   - <code style="background-color: #FBE5E1; color: #C0341D; padding: 0 0.4rem; font-size:15px;">gender</code> <br> Filter profiles based on their gender. For example `gender: non binary`<br>
   - <code style="background-color: #FBE5E1; color: #C0341D; padding: 0 0.4rem; font-size:15px;">source</code> <br> Filter based on data source. For example `source: Github`<br>
   - <code style="background-color: #FBE5E1; color: #C0341D; padding: 0 0.4rem; font-size:15px;">enrollement</code> <br> Filter based on organisations. For example `enrollment: "Bitergia"`<br>
