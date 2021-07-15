@@ -1,12 +1,3 @@
----
-layout: default
-title: SortingHat's interface
-nav_order: 3
-parent: SortingHat
-has_children: true
-has_toc: false
----
-
 # SortingHat's new interface
 
 As stated before, SortingHat's is currently being revamped into a service and as a result, its user-interface has been improved as well.
@@ -17,5 +8,5 @@ As stated before, SortingHat's is currently being revamped into a service and as
 
 - <strong>Organisation</strong> is the list of affiliations than an individual can have.
 
-![sortinghat's interface](../../../assets/sortinghat/sortinghat_interface_top.png)
-![sortinghat's interface](../../../assets/sortinghat/sortinghat_interface_bottom.png)
+![sortinghat's interface](./assets/sortinghat_interface_top.png)
+![sortinghat's interface](./assets/sortinghat_interface_bottom.png)

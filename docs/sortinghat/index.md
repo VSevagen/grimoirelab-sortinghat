@@ -1,11 +1,3 @@
----
-layout: default
-title: SortingHat
-nav_order: 3
-has_children: true
-has_toc: false
----
-
 # Contributor Information Management using SortingHat
 
 [SortingHat](https://github.com/chaoss/grimoirelab-sortinghat/tree/muggle) is a part of the GrimoireLab toolset and is used to gather data related to contributor information. Data about each individual is stored as a unique profile which may or may not include several indentities belonging to the same contributor. Moreover each individual can be affiliated with a particular organisation where therlatter was employed.

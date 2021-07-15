@@ -1,11 +1,3 @@
----
-layout: default
-title: Editing profiles
-nav_order: 4
-parent: SortingHat's interface
-grand_parent: SortingHat
----
-
 # How to edit profiles
 
 Once a profile is created, it is possible to edit some of its information, however some information is set during the profile creation phase and cannot be edited.
@@ -18,4 +10,4 @@ A profile consists of two parts, <strong>identities</strong> and <strong>Organis
 
 Tip: _If you hover on any field in profile and the edit icon appears, that means the filed is edtable._
 
-<img src="../../../assets/sortinghat/edit-profile.png" alt="edit-profile"/>
+![edit-profile](./assets/edit-profile.png)

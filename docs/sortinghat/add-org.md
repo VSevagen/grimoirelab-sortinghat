@@ -1,11 +1,3 @@
----
-layout: default
-title: Add/Edit Orgs
-nav_order: 5
-parent: SortingHat's interface
-grand_parent: SortingHat
----
-
 # Organisations
 
 Organisations in Sortinghat refers to the potential affiliations that individuals may have (Bitergia, Accenture, Fujitsu etc...)
@@ -18,10 +10,10 @@ In order to add an organisation in SortingHat, see the <code>Organisations</code
 2. Fill in the name of the organisation (Bitergia) and the domain or domains (www.bitergia.com).
 3. Save and it should be done !
 
-<img src="../../../assets/sortinghat/add-org.png">
+![add-org](./assets/add-org.png)
 
 ## How to edit organisations
 
 Organisation data consists of a name and domains. However only the domains are editable. You can either remove the exisiting domain or add new domains. In both cases, the process is pretty easy. Click on the edit icon to open up the Edit dialogue and press "Save" once done
 
-<img src="../../../assets/sortinghat/edit-org.png" alt="edit-org">
+![edit-org](./assets/edit-org.png)

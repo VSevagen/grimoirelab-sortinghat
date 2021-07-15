@@ -1,10 +1,3 @@
----
-layout: default
-title: Profiles & Identities
-nav_order: 1
-parent: SortingHat
----
-
 # Difference between profiles and identities
 
 Each individual will have a unique profile which may or may not consists of several identities. A profile is unique to a specific individual, that is no-one will have the same profile with the same information (Name, Email, Username, Affiliations etc... )

@@ -1,10 +1,3 @@
----
-layout: default
-title: Setup Sortinghat
-nav_order: 2
-parent: SortingHat
----
-
 # How to setup SortingHat
 
 ## Requirements
