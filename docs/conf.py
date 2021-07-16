@@ -19,9 +19,8 @@ from django.conf import settings
 sys.path.insert(0, os.path.abspath('../'))
 sys.path.insert(0, os.path.abspath('../sortinghat'))
 
-# The SECRET_KEY was randomly generated to deal with django exceptions
 settings.configure(
-    SECRET_KEY = '8lu*6g0lg)9z!ba+a$ehk)xt)xASxgb$i1&amp;022shmi1jcgihb*',
+    SECRET_KEY = 'fake_key',
     INSTALLED_APPS=[
         'sortinghat.core',
         'django.contrib.contenttypes',
@@ -35,7 +34,8 @@ settings.configure(
         'ASYNC': True,
         'DB': 0
         }
-    }
+    },
+    DEFAULT_GRAPHQL_PAGE_SIZE = 2
 )
 django.setup()
 os.system("sphinx-apidoc -f -o source/ ../")
