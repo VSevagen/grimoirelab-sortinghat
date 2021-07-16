@@ -11,3 +11,7 @@ uri >= 2.0.1
 Jinja2 == 2.11.3
 rq >= 1.4.0
 django-rq >= 2.3.2
+grimoirelab_toolkit >= 0.1.8
+fakeredis >= 1.4.1
+django-treebeard == 4.5.1
+uWSGI >= 2.0
