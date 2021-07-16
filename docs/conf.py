@@ -12,8 +12,32 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
+import django
+
+from django.conf import settings
+
+sys.path.insert(0, os.path.abspath('../'))
 sys.path.insert(0, os.path.abspath('../sortinghat'))
+
+# The SECRET_KEY was randomly generated to deal with django exceptions
+settings.configure(
+    SECRET_KEY = '8lu*6g0lg)9z!ba+a$ehk)xt)xASxgb$i1&amp;022shmi1jcgihb*',
+    INSTALLED_APPS=[
+        'sortinghat.core',
+        'django.contrib.contenttypes',
+        'django.contrib.admin',
+        'django.contrib.auth'
+    ],
+    RQ_QUEUES = {
+    'default': {
+        'HOST': 'localhost',
+        'PORT': 6379,
+        'ASYNC': True,
+        'DB': 0
+        }
+    }
+)
+django.setup()
 os.system("sphinx-apidoc -f -o source/ ../")
 
 
@@ -83,6 +107,6 @@ html_title = "GrimoireLab Guide"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = []
 
 autodoc_mock_imports = ["settings"]
