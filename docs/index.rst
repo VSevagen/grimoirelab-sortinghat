@@ -4,10 +4,10 @@
    contain the root `toctree` directive.
 
 
-About GrimoireLab 
+SortingHat
 =========================================
 
-GrimoireLab is a 100% free, open source toolset from CHAOSS to do software development analytics, that includes:
+A tool to manage identities.
 
 .. toctree::
    :caption: About:
