@@ -31,7 +31,11 @@ A tool to manage identities.
    Add/Edit Orgs <sortinghat/add-org.md>
    Delete Orgs <sortinghat/delete-orgs.md>
    Un-merge profiles <sortinghat/unmerge-profiles.md>
-   Whats more... <sortinghat/additional.md>
+   Lock a profile <sortinghat/lock-profile.md>
+   Set profile as Bot <sortinghat/profile-bot.md>
+   Filter through profiles <sortinghat/profile-filter.md>
+   Order profiles <sortinghat/order-profiles.md>
+   Un-enroll individual from org <sortinghat/un-enroll.md>
    Troubleshoot <sortinghat/troubleshoot.md>
 
 SortingHat Developer Docs
