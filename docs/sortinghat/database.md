@@ -1,6 +1,6 @@
 # How is data stored in SortingHat
 
-SortingHat maintains an SQL database with the indentities coming from different sources. Identities corresponding to the same person can be merged into the same <code>individual</code>, with a unique uuid. For each individual, a profile can be defined, with the name and other data to show corresponding person by default.
+SortingHat maintains an SQL database with the identities coming from different sources. Identities corresponding to the same person can be merged into the same <code>individual</code>, with a unique uuid. For each individual, a profile can be defined, with the name and other data to show corresponding person by default.
 
 ### Database
 

@@ -2,7 +2,7 @@
 
 Creating a profile is akin to adding an individual in SortingHat.
 
-To add an individual, click on the <strong>Add</strong> button in the <code>Individuals</code> table. This will open a dialogue titled <strong>Add individual</strong>. Fill in the individual's respective info's and finally click on <strong>Save</strong> to save the information.
+To add an individual, click on the <strong>Add</strong> button in the <code>Individuals</code> table. This will open a dialogue titled <strong>Add individual</strong>. Fill in the individual's respective information and finally click on <strong>Save</strong> to save the information.
 
 ![create-profile](./assets/create-profile.png)
 
@@ -21,4 +21,4 @@ In the <strong>Add individual</strong> dialogue,
 
 ![save-profile](./assets/save-profile.png)
 
-Note: _Organisation entered need to be registered in the Organisation table before completing process to add individual. If organisation is not present in organisation's table, then individual's data will be saved, <strong>excluding the organisation related data</strong>._
+Note: _Organisation entered need to be registered in the Organisation table before completing process to add individual. If organisation is not present in organisation's table, then individual's data will be saved, <strong>excluding the organisation's data</strong>._
