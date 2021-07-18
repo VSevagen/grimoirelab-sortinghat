@@ -26,7 +26,7 @@ A tool to manage identities.
    SortingHat's Database <sortinghat/database.md>
    Install SortingHat (Backend and Frontend) <sortinghat/setup.md>
    Install SortingHat Service <sortinghat/sortinghat-service.md>
-   API reference doc <sortinghat/api-reference.md>
+   API reference doc <sortinghat/api-reference.rst>
 
 SortingHat Developer Docs
 ==================
