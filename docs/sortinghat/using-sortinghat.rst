@@ -2,7 +2,6 @@ Using SortingHat
 ================
 
 .. toctree::
-    :maxdepth: 2
     :caption: Table of Content:
 
     SortingHat's interface <./interface.md>
@@ -10,7 +9,8 @@ Using SortingHat
     Removing profiles <./remove-profile.md>
     Merging profiles <./merging-profile.md>
     Editing profiles <./edit-profile.md>
-    Add/Edit Orgs <./add-org.md>
+    Add Orgs <./add-org.md>
+    Edit Orgs <./edit-org.md>
     Remove Orgs <./delete-orgs.md>
     Un-merge profiles <./unmerge-profiles.md>
     Lock a profile <./lock-profile.md>

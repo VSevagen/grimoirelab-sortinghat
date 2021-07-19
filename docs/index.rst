@@ -3,33 +3,25 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-
 SortingHat
 ==========
 
 A tool to manage identities.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contributor Information Management (SortingHat):
-   :hidden:
+   :maxdepth: 1
+   :caption: SortingHat:
    
-   What is Sortinghat ? <sortinghat/index.md>
+   What is SortingHat ? <sortinghat/index.md>
    Profiles and Identities <sortinghat/profile.md>
    Affiliations Dashboard <sortinghat/dashboard.md>
    Using SortingHat <sortinghat/using-sortinghat.rst>
 
 .. toctree::
+   :maxdepth: 2
    :caption: Developer Documentation:
-   :hidden:
 
    SortingHat's Database <sortinghat/database.md>
-   Install SortingHat (Backend and Frontend) <sortinghat/setup.md>
-   Install SortingHat Service <sortinghat/sortinghat-service.md>
+   Install SortingHat (Backend and Frontend) <https://github.com/chaoss/grimoirelab-sortinghat/blob/muggle/README.md#requirements>
+   Install SortingHat as a Service <https://github.com/chaoss/grimoirelab-sortinghat/blob/muggle/README.md#sortinghat-service>
    API reference doc <sortinghat/api-reference.rst>
-
-SortingHat Developer Docs
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`

@@ -1,8 +1,4 @@
-# Organisations
-
-Organisations in Sortinghat refers to the potential affiliations that individuals may have (Bitergia, Microsoft, Apple etc...)
-
-## How to add organisations
+# How to add organisations
 
 In order to add an organisation in SortingHat, see the <code>Organisations</code> table on the rightmost side of the interface.
 
@@ -11,9 +7,3 @@ In order to add an organisation in SortingHat, see the <code>Organisations</code
 3. Save it.
 
 ![add-org](./assets/add-org.png)
-
-## How to edit organisations
-
-Organisation data consists of a name and domains. However only the domains are editable. You can either remove the exisiting domain or add new domains. In both cases, the process is pretty easy. Click on the edit icon to open up the Edit dialogue and press "Save" once done
-
-![edit-org](./assets/edit-org.png)
