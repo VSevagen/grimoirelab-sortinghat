@@ -14,7 +14,6 @@ A tool to manage identities.
    
    What is SortingHat ? <sortinghat/index.md>
    Profiles and Identities <sortinghat/profile.md>
-   Affiliations Dashboard <sortinghat/dashboard.md>
    Using SortingHat <sortinghat/using-sortinghat.rst>
 
 .. toctree::

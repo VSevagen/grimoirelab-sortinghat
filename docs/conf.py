@@ -101,7 +101,7 @@ html_theme_options = {
     },
 }
 
-html_title = "GrimoireLab Guide"
+html_title = "SortingHat Docs"
 # html_logo = "grimoire.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
