@@ -25,7 +25,7 @@ from .schema import sh_schema as SortingHatSchema
 
 
 __all__ = [
-    SortingHatClient,
-    SortingHatClientError,
-    SortingHatSchema,
+    'SortingHatClient',
+    'SortingHatClientError',
+    'SortingHatSchema',
 ]

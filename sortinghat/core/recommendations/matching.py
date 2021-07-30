@@ -63,8 +63,7 @@ def recommend_matches(source_uuids, target_uuids, criteria, verbose=False):
     :param source_uuids: list of individual keys to find matches for
     :param target_uuids: list of individual keys where to find matches
     :param criteria: list of matching criteria (`email`, `name`, `username`)
-    :param verbose: if set to `True`, the list of results will include individual
-    identities. Otherwise, results will include main keys from individuals
+    :param verbose: if set to `True`, the list of results will include individual identities. Otherwise, results will include main keys from individuals
 
     :returns: a generator of recommendations
     """

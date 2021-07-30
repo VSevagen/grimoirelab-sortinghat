@@ -18,3 +18,4 @@ Using SortingHat
     Filter through profiles <./profile-filter.md>
     Order profiles <./order-profiles.md>
     Un-enroll individual from org <./un-enroll.md>
+    Troubleshoot <./troubleshoot.md>

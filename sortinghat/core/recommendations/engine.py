@@ -62,8 +62,8 @@ class RecommendationEngine:
         exception.
 
         :param name: recommendation type
-        :param *args: positional arguments to run the engine
-        :param **args: keyword arguments to run the engine
+        :param \*args: positional arguments to run the engine
+        :param \**args: keyword arguments to run the engine
 
         :returns: a generator of `Recommendation`
 
